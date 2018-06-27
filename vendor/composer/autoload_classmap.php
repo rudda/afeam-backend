@@ -100,4 +100,5 @@ return array(
     'Slim\\Route' => $vendorDir . '/slim/slim/Slim/Route.php',
     'Slim\\RouteGroup' => $vendorDir . '/slim/slim/Slim/RouteGroup.php',
     'Slim\\Router' => $vendorDir . '/slim/slim/Slim/Router.php',
+    'afeam\\api\\domain\\Usuario' => $baseDir . '/api/v1/domain/Usuario.php',
 );

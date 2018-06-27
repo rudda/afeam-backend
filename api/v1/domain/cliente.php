@@ -1,6 +1,7 @@
 <?php
 namespace afeam\api\domain;
 
+use PDO;
     class Cliente{
 
 
@@ -92,19 +93,21 @@ namespace afeam\api\domain;
      
           $database =$this->connect();
      
+          
             try {
                  
                  if($database!= false && $database != null) {
+                     
      
-                     $query = "INSERT INTO `cliente` ( `nome`, `cpf`, `telefone`, `logradouro`, `numero`, `bairro`, `cidade`, `uf`, `obs`, `status`, `situacao`,  `data_`) VALUES ( $nome, $cpf, $telefone, $logradouro, $numero, $bairro, $cidade, $uf, $obs, $status, $situacao,  $data_)";
+                     $query = "INSERT INTO `cliente` ( `nome`, `cpf`, `telefone`, `logradouro`, `numero`, `bairro`, `cidade`, `uf`, `obs`, `status`, `situacao`,  `data_`) VALUES ( '$nome', '$cpf', '$telefone', '$logradouro', '$numero', '$bairro', '$cidade', '$uf', '$obs', $status, $situacao,  '$data_')";
                      
                         $data =  $database->prepare($query);
-                         
+                     
+                        
                          if($data->execute()){
      
                              $id_user =   $database->lastInsertId(); 
-                            
-                           
+                          
                              return $this->buscarCliente($id_user);
                            
      
@@ -129,10 +132,10 @@ namespace afeam\api\domain;
      
           }       
      
-
+         
           function atualizarCliente($id_cliente, $nome,$cpf, $telefone,$logradouro,$numero,$bairro,$cidade, $uf, $obs,$status, $situacao, $data_){
 
-                $query =  "UPDATE `cliente` SET `nome`= '$nome',`cpf`='$cpf', `telefone`='$telefone',`logradouro`= '$logradouro',`numero`='$numero',`bairro`='$bairro',`cidade`= '$cidade',`uf`='$uf',`obs`='$obs',`status`= $status,`situacao`=$situacao,`data_`=$data_ WHERE id_cliente = $id_cliente";
+                $query =  "UPDATE `cliente` SET `nome`= '$nome',`cpf`='$cpf', `telefone`='$telefone',`logradouro`= '$logradouro',`numero`='$numero',`bairro`='$bairro',`cidade`= '$cidade',`uf`='$uf',`obs`='$obs',`status`= $status,`situacao`=$situacao,`data_`= '$data_' WHERE id_cliente = $id_cliente";
 
                 $database = $this->connect();
 
@@ -140,7 +143,7 @@ namespace afeam\api\domain;
 
                     $response = $database->prepare($query);
 
-                    if($response->execute() && $response->rowCount()>0){
+                    if($response->execute() && $response->rowCount() >0){
 
 
                         return $this->buscarCliente($id_cliente);

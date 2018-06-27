@@ -6,6 +6,7 @@ $app = new \Slim\App();
 
 include 'routers/cors.php';
 include 'routers/atendente.php';
+include 'routers/cliente.php';
 
 // Define app routes
 $app->get('/hello/{name}', function ($request, $response, $args) {

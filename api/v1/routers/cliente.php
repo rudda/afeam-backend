@@ -1,12 +1,13 @@
 <?php
+use afeam\api\domain\Cliente;
 
-$app->get('/cliente[/{id}]', function ($request, $response, $args) {
+ $app->get('/clientes[/{id}]', function ($request, $response, $args) {
        
-       $usuario =  new Usuario();
+       $usuario =  new Cliente();
 
        if(isset($args['id'])){
 
-           $resp =  $usuario->buscarUsuario($args['id']);
+           $resp =  $usuario->buscarCliente($args['id']);
 
            if($resp!= null && $response!= false ){
 
@@ -16,7 +17,7 @@ $app->get('/cliente[/{id}]', function ($request, $response, $args) {
 
        }else{
 
-           $resp  = $usuario->listarTodosUsuarios();
+           $resp  = $usuario->listarTodosClientes();
           
            if($resp!= null && $response!= false ){
 
@@ -28,18 +29,26 @@ $app->get('/cliente[/{id}]', function ($request, $response, $args) {
      
        return  $response->write('erro')->withStatus(500);
      
-   });
+});
 
    
 
    
-   $app->post('/cliente/new', function ($request, $response, $args) {
+   $app->post('/clientes/new', function ($request, $response, $args) {
        
-       $atendente = $request->getBody();
+        $body = $request->getBody();
 
-       $usuario = new Usuario();
-       $data = $usuario->novoUsuario($atendente->nome, $atendente->cpf, $atendente->email, $atendente->senha, 2 );
+        $cliente = json_decode($body);
+     
+             
+       $usuario = new Cliente();
+      
+       
+       $data_ = '';
 
+       $data = $usuario->novoCliente($cliente->nome, $cliente->cpf,  $cliente->telefone,$cliente->logradouro, $cliente->numero, $cliente->bairro,$cliente->cidade, $cliente->uf, $cliente->obs, $cliente->status, $cliente->situacao, $data_ );
+
+       
        if($data!= false){
           
            return $response->write(json_encode($data))->withStatus(200);
@@ -50,15 +59,20 @@ $app->get('/cliente[/{id}]', function ($request, $response, $args) {
    });
 
    
-   $app->post('/cliente/update/{id}', function ($request, $response, $args) {
+$app->post('/clientes/update/{id}', function ($request, $response, $args) {
    
     if(isset($args['id'])){
 
-        $usuario = new Usuario();
+        $body = $request->getBody();
+        $cliente = json_decode($body);
+     
+        $data_ = date('Y-m-d H:m:s', time());
+         $cli = new Cliente();
 
-        if($usuario->deletarUsuario($args['id']) != false){
-
-            return $response->withStatus(200);
+         $data = $cli->atualizarCliente($args['id'], $cliente->nome, $cliente->cpf,  $cliente->telefone,$cliente->logradouro, $cliente->numero, $cliente->bairro,$cliente->cidade, $cliente->uf, $cliente->obs, $cliente->status, $cliente->situacao, $data_ );
+        if($data != false){
+          
+            return $response->write(json_encode($data))->withStatus(200);
 
         }else{
 
@@ -76,13 +90,13 @@ $app->get('/cliente[/{id}]', function ($request, $response, $args) {
 
 
 
-   $app->post('/cliente/delete/{id}', function ($request, $response, $args) {
+$app->post('/clientes/delete/{id}', function ($request, $response, $args) {
    
        if(isset($args['id'])){
 
-           $usuario = new Usuario();
+           $usuario = new Cliente();
 
-           if($usuario->deletarUsuario($args['id']) != false){
+           if($usuario->deletarCliente($args['id']) != false){
 
                return $response->withStatus(200);
 

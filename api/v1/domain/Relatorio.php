@@ -5,24 +5,24 @@ namespace afeam\api\domain;
 
 class Relatorio{
 
-    
-
-    function relatorioClienteComStatusEmProcesso(){
 
 
-    }
-
-    function relatorioClientesComStatusDeferido(){
+    function relatorioClienteComStatusEmProcesso($mes, $ano){
 
 
     }
 
-    function relatorioClienteComStatusIndeferido(){
+    function relatorioClientesComStatusDeferido($mes, $ano){
 
 
     }
 
-    function relatorioDeTodosOsClientes(){
+    function relatorioClienteComStatusIndeferido($mes, $ano){
+
+
+    }
+
+    function relatorioDeTodosOsClientes($mes, $ano){
 
 
     }

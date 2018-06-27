@@ -58,7 +58,7 @@ use afeam\api\domain\Usuario;
 
             $usuario = new Usuario();
 
-            if($usuario->deletarUsuario($args['id']) != false){
+            if($data = $usuario->deletarUsuario($args['id']) != false){
 
                 return $response->withStatus(200);
 

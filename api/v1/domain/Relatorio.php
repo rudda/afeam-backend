@@ -7,5 +7,27 @@ class Relatorio{
 
     
 
+    function relatorioClienteComStatusEmProcesso(){
+
+
+    }
+
+    function relatorioClientesComStatusDeferido(){
+
+
+    }
+
+    function relatorioClienteComStatusIndeferido(){
+
+
+    }
+
+    function relatorioDeTodosOsClientes(){
+
+
+    }
+
+
+
 
 }

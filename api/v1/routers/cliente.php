@@ -32,9 +32,7 @@ use afeam\api\domain\Cliente;
 });
 
    
-
-   
-   $app->post('/clientes/new', function ($request, $response, $args) {
+$app->post('/clientes/new', function ($request, $response, $args) {
        
         $body = $request->getBody();
 

@@ -29,6 +29,31 @@ class Usuario {
 
     }
 
+   function login($cpf, $senha){
+
+    $query = "select * from usuario where cpf= $cpf and senha = $senha";
+
+    $database = $this->connect();
+
+    $result = $database->query($query);;
+
+    $count = $result->rowCount(); 
+
+    if($count>0){
+        $u = $result->fetch(PDO::FETCH_ASSOC);
+        
+        return $u;
+    
+    }else{
+
+        return false;
+
+    }
+
+
+   }
+
+
     function listarTodosUsuarios($tipo=1){
 
         $query = "select * from usuario where tipo = $tipo";

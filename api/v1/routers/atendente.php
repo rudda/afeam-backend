@@ -8,6 +8,10 @@ use afeam\api\domain\Usuario;
 
         if(isset($args['id'])){
 
+            $usuario->login("01102312345", "123");
+            
+            
+
             $resp =  $usuario->buscarUsuario($args['id']);
 
             if($resp!= null && $response!= false ){

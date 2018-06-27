@@ -32,17 +32,47 @@ use afeam\api\domain\Usuario;
       
     });
 
-    $app->post('/atendentes/update', function ($request, $response, $args) {
-        return $response->write("Hello " . $args['name']);
-    });
+    
 
     
     $app->post('/atendentes/new', function ($request, $response, $args) {
-        return $response->write("Hello " . $args['name']);
+        
+        $atendente = $request->getBody();
+
+        $usuario = new Usuario();
+        $data = $usuario->novoUsuario($atendente->nome, $atendente->cpf, $atendente->email, $atendente->senha, 2 );
+
+        if($data!= false){
+           
+            return $response->write(json_encode($data))->withStatus(200);
+        }
+        
+        return $response->withStatus(500);
+    
     });
 
 
-    $app->delete('/atendentes/{id}', function ($request, $response, $args) {
-        return $response->write("Hello " . $args['id']);
+    $app->post('/atendentes/delete/{id}', function ($request, $response, $args) {
+    
+        if(isset($args['id'])){
+
+            $usuario = new Usuario();
+
+            if($usuario->deletarUsuario($args['id']) != false){
+
+                return $response->withStatus(200);
+
+            }else{
+
+                
+                return $response->withStatus(500);
+
+            }
+
+        }else{
+
+            return $response->withStatus(500);
+        }
+    
     });
     

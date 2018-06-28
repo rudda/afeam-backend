@@ -1,0 +1,1 @@
+angular.module('AtendenteModule', ['ui.router', 'oc.lazyLoad', 'ngMask']);

@@ -14,7 +14,7 @@ function LoginController($http) {
 
         $http({
             method: 'POST',
-            url: '../api/v1/usuarios/login/' + lc['cpf'].replace('.', '') + '/' + lc['senha'],
+            url: '../api/v1/usuarios/login/' + lc['cpf'].replace(/\./g, '').replace('-', '') + '/' + lc['senha'],
         }).then(function (dados) {
 
             console.log(dados['data']);

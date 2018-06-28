@@ -17,26 +17,18 @@ function LoginController($http) {
             url: '../api/v1/usuarios/login/' + lc['cpf'].replace(/\./g, '').replace('-', '') + '/' + lc['senha'],
         }).then(function (dados) {
 
-            console.log(dados['data']);
-            return;
-
             try {
 
-                if(dados['data']['status'] === 'sucesso') {
+                docCookies.setItem('id', dados['data']['id_usuario'], null, '/');
+                docCookies.setItem('nome', dados['data']['nome'], null, '/');
+                docCookies.setItem('tipo', dados['data']['tipo'], null, '/');
 
-                    docCookies.setItem('id', dados['data']['dados']['id'], null, '/');
-                    docCookies.setItem('nome', dados['data']['dados']['nome'], null, '/');
-                    docCookies.setItem('tipo', dados['data']['dados']['tipo'], null, '/');
-
-                    if(dados['data']['dados']['tipo'] === '1') document.location.href = '../administrador';
-                    else document.location.href = '../atendente';
-                }
-                else if(dados['data']['status'] === 'falha') toastr.error(dados['data']['mensagem'], 'Dados incorretos');
-                else toastr.error('Não foi possível processar sua solicitação', 'Ocorreu um erro');
+                if(dados['data']['tipo'] === '1') document.location.href = '../administrador';
+                else document.location.href = '../atendente';
             }
             catch (excecao) {
 
-                toastr.error('Não foi possível processar sua solicitação', 'Ocorreu um erro');
+                toastr.error('Não foi possível processar sua solicitação/Credenciais incorretas', 'Ocorreu um erro');
             }
         }, function () {
 

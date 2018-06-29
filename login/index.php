@@ -11,8 +11,8 @@
 
     <!-- CSS -->
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+    <!-- Source Sans -->
+    <link href="../assets/css/source-sans.css" rel="stylesheet">
 
     <!-- Linear Icons -->
     <link href="../assets/fontes/linear-icons/linear-icons.css" rel="stylesheet">
@@ -84,9 +84,6 @@
 </div>
 
 <!-- JavaScript -->
-
-<!-- Font Awesome -->
-<script src="../node_modules/@fortawesome/fontawesome-free/js/all.js" type="text/javascript"></script>
 
 <!-- jQuery -->
 <script src="../assets/js/jquery.min.js" type="text/javascript"></script>

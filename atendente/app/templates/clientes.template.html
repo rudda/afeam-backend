@@ -1,0 +1,54 @@
+<div class="row" ng-controller="ClientesController as clienteController">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="panel">
+            <div class="panel-body">
+                <div class="col-sm-12 col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">Busca</span>
+                            <input id="busca" class="form-control" type="text" placeholder="Entre aqui com seu termo de busca" required ng-model="clienteController.filtro">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-6" ng-repeat="cliente in clienteController.clientes | filter: clienteController.filtro">
+        <div class="panel">
+            <div class="panel-heading">
+                <span class="label label-default">{{clienteController.carregarSituacao(cliente.situacao)}}</span>
+                <span class="label label-default">{{clienteController.carregarStatus(cliente.status)}}</span>
+            </div>
+            <div class="panel-body">
+                <h3 style="margin-top: 0">{{cliente.nome}}</h3>
+                <p>
+                    <b>Telefone:</b> {{cliente.telefone}}
+                    <br><b>CPF:</b> {{cliente.cpf}}
+                    <br><b>Endereço:</b> {{cliente.logradouro}}, {{cliente.numero}} - {{cliente.bairro}} - {{cliente.cidade}}/{{cliente.uf}}
+                    <br><b>Observação:</b> {{cliente.obs}}
+                </p>
+                <label>Opções</label>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon">Situação</span>
+                        <select id="situacao" class="form-control" ng-model="cliente.situacao" ng-change="clienteController.alterarStatus(cliente.id_cliente, cliente.situacao)">
+                            <option ng-repeat="situacaoDisponivel in clienteController.situacoesDisponiveis" ng-value="situacaoDisponivel.codigo">{{situacaoDisponivel.nome}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon">Status</span>
+                        <select id="status" class="form-control" ng-model="cliente.status" ng-change="clienteController.alterarStatus(cliente.id_cliente, cliente.status)">
+                            <option ng-repeat="statusDisponivel in clienteController.statusDisponiveis" ng-value="statusDisponivel.codigo">{{statusDisponivel.nome}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer text-right">
+                <button type="button" class="btn btn-sm btn-info" title="Editar"><i class="fa fa-edit"></i></button>
+                <button type="button" class="btn btn-sm btn-danger" title="Excluir"><i class="fa fa-trash"></i></button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -7,12 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
-    <title>AFEAM :: Login</title>
+    <title>AFEAM :: Área do Atendente</title>
 
     <!-- CSS -->
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+    <!-- Source Sans -->
+    <link href="../assets/css/source-sans.css" rel="stylesheet">
 
     <!-- Linear Icons -->
     <link href="../assets/fontes/linear-icons/linear-icons.css" rel="stylesheet">
@@ -64,8 +64,8 @@
         <div class="sidebar-scroll">
             <nav>
                 <ul class="nav">
-                    <li><a ui-sref-active="active" ui-sref="home" href="#!/clientes"><i class="lnr lnr-users"></i> <span>Clientes</span></a></li>
-                    <li><a ui-sref-active="active" ui-sref="entregas" href="#!/relatorios"><i class="lnr lnr-history"></i> <span>Relatórios</span></a></li>
+                    <li><a ui-sref-active="active" ui-sref="clientes" href="#!/clientes"><i class="lnr lnr-users"></i> <span>Clientes</span></a></li>
+                    <li><a ui-sref-active="active" ui-sref="relatorios" href="#!/relatorios"><i class="lnr lnr-history"></i> <span>Relatórios</span></a></li>
                 </ul>
             </nav>
         </div>
@@ -74,9 +74,7 @@
     <div class="main">
         <div class="main-content">
             <div class="container-fluid">
-                <div class="row">
-                    <ui-view></ui-view>
-                </div>
+                <ui-view></ui-view>
             </div>
         </div>
     </div>
@@ -84,9 +82,6 @@
 </div>
 
 <!-- JavaScript -->
-
-<!-- Font Awesome -->
-<script src="../node_modules/@fortawesome/fontawesome-free/js/all.js" type="text/javascript"></script>
 
 <!-- jQuery -->
 <script src="../assets/js/jquery.min.js" type="text/javascript"></script>
@@ -96,6 +91,9 @@
 
 <!-- Bootstrap -->
 <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+
+<!-- Sweet Alert -->
+<script src="../node_modules/sweetalert/dist/sweetalert.min.js" type="text/javascript"></script>
 
 <!-- Toastr -->
 <script src="../node_modules/toastr/build/toastr.min.js" type="text/javascript"></script>

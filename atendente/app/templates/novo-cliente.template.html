@@ -1,0 +1,93 @@
+<div class="row" ng-controller="NovoClienteController as novoClienteController">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="panel">
+            <div class="panel-heading">Novo Cliente</div>
+            <div class="panel-body">
+                <form id="cliente" class="form-auth-small" ng-submit="novoClienteController.novoCliente()">
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">Nome</span>
+                            <input id="nome" class="form-control" type="text" placeholder="Nome" required ng-model="novoClienteController.nome">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">CPF</span>
+                            <input id="cpf" class="form-control" type="text" placeholder="CPF" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required ng-model="novoClienteController.cpf" mask="999.999.999-99" mask-restrict="reject">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">Telefone</span>
+                            <input id="telefone" class="form-control" type="text" placeholder="Telefone" pattern="[\(]\d{2}[\)][ ]\d{4,5}-\d{4}" required ng-model="novoClienteController.telefone" mask="(99) 9?9999-9999" mask-restrict="reject">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">Situação</span>
+                            <select id="situacao" class="form-control" ng-model="novoClienteController.situacao">
+                                <option ng-repeat="situacaoOpcao in novoClienteController.situacoesDisponiveis" ng-value="situacaoOpcao['codigo']">{{situacaoOpcao['nome']}}</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">Status</span>
+                            <select id="status" class="form-control" ng-model="novoClienteController.status">
+                                <option ng-repeat="statusOpcao in novoClienteController.statusDisponiveis" ng-value="statusOpcao['codigo']">{{statusOpcao['nome']}}</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">Logradouro</span>
+                            <input id="logradouro" class="form-control" type="text" placeholder="Logradouro" required ng-model="novoClienteController.logradouro">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">Número</span>
+                            <input id="numero" class="form-control" type="text" placeholder="Número" required ng-model="novoClienteController.numero">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">Bairro</span>
+                            <input id="bairro" class="form-control" type="text" placeholder="Bairro" required ng-model="novoClienteController.bairro">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">Cidade</span>
+                            <input id="cidade" class="form-control" type="text" placeholder="Cidade" required ng-model="novoClienteController.cidade">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">UF</span>
+                            <select id="uf" class="form-control" ng-model="novoClienteController.uf">
+                                <option ng-repeat="ufOpcao in novoClienteController.ufs" ng-value="ufOpcao">{{ufOpcao}}</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="text-right">
+                        <a class="btn btn-success" href="#!/clientes">VOLTAR</a>
+                        <button type="submit" class="btn btn-success">CADASTRAR CLIENTE</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

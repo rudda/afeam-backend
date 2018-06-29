@@ -44,7 +44,7 @@
         </div>
         <div class="container-fluid">
             <div class="navbar-btn">
-                <button type="button" class="btn-toggle-fullwidth"><i class="lnr lnr-arrow-left-circle"></i></button>
+                <button type="button" class="btn-toggle-fullwidth"><i class="lnr lnr-menu"></i></button>
             </div>
             <div id="navbar-menu">
                 <ul class="nav navbar-nav navbar-right">

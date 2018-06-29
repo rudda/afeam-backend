@@ -1,16 +1,15 @@
 <div class="row" ng-controller="ClientesController as clienteController">
-    <div class="col-sm-12 col-md-12 col-lg-12">
-        <div class="panel">
-            <div class="panel-body">
-                <div class="col-sm-12 col-md-6 col-lg-6">
-                    <div class="form-group">
-                        <div class="input-group">
-                            <span class="input-group-addon">Busca</span>
-                            <input id="busca" class="form-control" type="text" placeholder="Entre aqui com seu termo de busca" required ng-model="clienteController.filtro">
-                        </div>
-                    </div>
+    <div class="col-sm-12 col-md-12 col-lg-12 row">
+        <div class="col-sm-12 col-md-8 col-lg-8">
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                    <input id="busca" class="form-control" type="text" placeholder="Entre aqui com seu termo de busca" required ng-model="clienteController.filtro">
                 </div>
             </div>
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4">
+            <a class="btn btn-primary" href="#!/novo-cliente">Novo Cliente <i class="fa fa-user"></i></a>
         </div>
     </div>
     <div class="col-sm-12 col-md-6 col-lg-6" ng-repeat="cliente in clienteController.clientes | filter: clienteController.filtro">
@@ -20,7 +19,7 @@
                 <span class="label label-default">{{clienteController.carregarStatus(cliente.status)}}</span>
             </div>
             <div class="panel-body">
-                <h3 style="margin-top: 0">{{cliente.nome}}</h3>
+                <h3 style="margin-top: 0;">{{cliente.nome}}</h3>
                 <p>
                     <b>Telefone:</b> {{cliente.telefone}}
                     <br><b>CPF:</b> {{cliente.cpf}}

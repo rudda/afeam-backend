@@ -20,12 +20,21 @@ angular.module('AtendenteModule').config(function ($stateProvider, $urlRouterPro
                 }]}
         })
         .state({
-            name: 'detalhesagendamento',
-            url: '/detalhes-agendamento/:agendamentoId',
-            templateUrl: 'app/templates/detalhes-agendamento.template.html',
+            name: 'novocliente',
+            url: '/novo-cliente',
+            templateUrl: 'app/templates/novo-cliente.template.html',
             resolve: {
                 loader: ['$ocLazyLoad', function($ocLazyLoad) {
-                    return $ocLazyLoad.load(['app/controllers/detalhes-agendamento.controller.js']);
+                    return $ocLazyLoad.load(['app/controllers/novo-cliente.controller.js']);
+                }]}
+        })
+        .state({
+            name: 'editarcliente',
+            url: '/editar-cliente/:id',
+            templateUrl: 'app/templates/editar-cliente.template.html',
+            resolve: {
+                loader: ['$ocLazyLoad', function($ocLazyLoad) {
+                    return $ocLazyLoad.load(['app/controllers/editar-cliente.controller.js']);
                 }]}
         });
 

@@ -26,8 +26,6 @@ function ClientesController($http) {
             url: '../api/v1/clientes'
         }).then(function (dados) {
 
-            console.log(dados['data']);
-
             try {
 
                 cc['clientes'] = dados['data'];

@@ -56,7 +56,7 @@ class Usuario {
 
     function listarTodosUsuarios($tipo=1){
 
-        $query = "select * from usuario where tipo = $tipo";
+        $query = "select * from usuario";
 
         $usuarios =  [];
 

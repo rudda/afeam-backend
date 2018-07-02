@@ -1,0 +1,30 @@
+<div class="row" ng-controller="AdministradoresController as administradoresController">
+    <div class="col-sm-12 col-md-12 col-lg-12 row">
+        <div class="col-sm-8 col-md-8 col-lg-8">
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                    <input id="busca" class="form-control" type="text" placeholder="Entre aqui com seu termo de busca" required ng-model="administradoresController.filtro">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <a class="btn btn-primary" href="#!/novo-administrador">Novo administrador <i class="fa fa-user"></i></a>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-6" ng-repeat="administrador in administradoresController.administradores | filter: administradoresController.filtro">
+        <div class="panel">
+            <div class="panel-heading">
+                <span class="label label-default">{{administradoresController.carregarTipo(administrador.tipo)}}</span>
+            </div>
+            <div class="panel-body">
+                <h3 style="margin-top: 0;">{{administrador.nome}}</h3>
+                <p><b>CPF:</b> {{administrador.cpf}}</p>
+            </div>
+            <div class="panel-footer text-right">
+                <a href="#!/editar-administrador/{{administrador['id_usuario']}}" class="btn btn-sm btn-info" title="Editar">Editar <i class="fa fa-edit"></i></a>
+                <button type="button" class="btn btn-sm btn-danger" title="Excluir" ng-click="administradoresController.excluirUsuario(administrador.id_usuario)">Excluir <i class="fa fa-trash"></i></button>
+            </div>
+        </div>
+    </div>
+</div>

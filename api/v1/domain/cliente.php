@@ -99,8 +99,8 @@ use PDO;
                  if($database!= false && $database != null) {
                      
      
-                     $query = "INSERT INTO `cliente` ( `nome`, `cpf`, `telefone`, `logradouro`, `numero`, `bairro`, `cidade`, `uf`, `obs`, `status`, `situacao`,  `data_`) VALUES ( '$nome', '$cpf', '$telefone', '$logradouro', '$numero', '$bairro', '$cidade', '$uf', '$obs', $status, $situacao,  '$data_')";
-                     
+                     $query = "INSERT INTO cliente ( nome, cpf, telefone, logradouro, numero, bairro, cidade, uf, obs, status, situacao) VALUES ( '$nome', '$cpf', '$telefone', '$logradouro', '$numero', '$bairro', '$cidade', '$uf', '$obs', '$status', '$situacao')";
+
                         $data =  $database->prepare($query);
                      
                         

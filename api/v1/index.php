@@ -1,7 +1,6 @@
 <?php
 require ('../../vendor/autoload.php');
 
-
 $app = new \Slim\App();
 
 include 'routers/cors.php';

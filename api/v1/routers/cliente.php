@@ -37,7 +37,7 @@ $app->post('/clientes/new', function ($request, $response, $args) {
         $body = $request->getBody();
 
         $cliente = json_decode($body);
-     
+
              
        $usuario = new Cliente();
       

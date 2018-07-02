@@ -8,9 +8,7 @@ $app->get('/relatorios/{tipo}/{mes}/{ano}', function ($request, $response, $args
     $mes = $args['mes'];
     $ano = $args['ano'];
     $tipo = "";
-    $data;
-
-    
+    $data = "";
 
     switch($args['tipo']){
 

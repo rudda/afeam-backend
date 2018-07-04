@@ -38,6 +38,15 @@ angular.module('AtendenteModule').config(function ($stateProvider, $urlRouterPro
                 }]}
         })
         .state({
+            name: 'novoadministrador',
+            url: '/novo-administrador',
+            templateUrl: 'app/templates/novo-administrador.template.html',
+            resolve: {
+                loader: ['$ocLazyLoad', function($ocLazyLoad) {
+                    return $ocLazyLoad.load(['app/controllers/novo-administrador.controller.js']);
+                }]}
+        })
+        .state({
             name: 'editarcliente',
             url: '/editar-cliente/:id',
             templateUrl: 'app/templates/editar-cliente.template.html',
@@ -53,6 +62,15 @@ angular.module('AtendenteModule').config(function ($stateProvider, $urlRouterPro
             resolve: {
                 loader: ['$ocLazyLoad', function($ocLazyLoad) {
                     return $ocLazyLoad.load(['app/controllers/editar-administrador.controller.js']);
+                }]}
+        })
+        .state({
+            name: 'meuperfil',
+            url: '/meu-perfil',
+            templateUrl: 'app/templates/meu-perfil.template.html',
+            resolve: {
+                loader: ['$ocLazyLoad', function($ocLazyLoad) {
+                    return $ocLazyLoad.load(['app/controllers/meu-perfil.controller.js']);
                 }]}
         });
 

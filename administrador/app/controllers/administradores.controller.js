@@ -4,6 +4,7 @@ function AdministradoresController($http) {
 
     let cc = this;
     cc['administradores'] = [];
+    cc['idAdministradorLogado'] = docCookies.getItem('id');
 
     cc.carregarAdministradores = function () {
 
@@ -44,7 +45,7 @@ function AdministradoresController($http) {
                 url: '../api/v1/atendentes/delete/' + id
             }).then(function (dados) {
 
-                toastr.success('Atendente excluído', 'Sucesso');
+                toastr.success('Usuário excluído', 'Sucesso');
 
                 cc.carregarAdministradores();
 

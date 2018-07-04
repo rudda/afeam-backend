@@ -33,7 +33,7 @@ function EditarClienteController($http, $stateParams) {
             }
             catch (excecao) {
 
-                toastr.error('Não há clientes/Erro ao processr solicitação', 'Sem clientes/Erro');
+                toastr.error('Erro ao carregar os dados do cliente', 'Erro');
             }
         }, function () {
 

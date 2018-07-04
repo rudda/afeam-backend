@@ -85,9 +85,9 @@ class Usuario {
 
     }
 
-    function buscarUsuario($id=0, $tipo=1){
+    function buscarUsuario($id=0){
 
-        $query = "select * from usuario where id_usuario = $id and tipo = $tipo";
+        $query = "select * from usuario where id_usuario = $id";
         
         $database = $this->connect();
 

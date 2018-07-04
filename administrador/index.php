@@ -51,7 +51,7 @@
                     <li class="dropdown">
                         <a href="" class="dropdown-toggle" data-toggle="dropdown"><img src="../assets/img/padrao.png" class="img-circle" alt="Foto de perfil"> <span>{{atendenteController.nomeCliente}}</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href=""><i class="lnr lnr-user"></i> <span>Minha conta</span></a></li>
+                            <li><a href="#!/meu-perfil"><i class="lnr lnr-user"></i> <span>Meu perfil</span></a></li>
                             <li><a href="" ng-click="atendenteController.logout()"><i class="lnr lnr-exit"></i> <span>Sair</span></a></li>
                         </ul>
                     </li>

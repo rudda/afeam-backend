@@ -41,10 +41,12 @@ use afeam\api\domain\Usuario;
     
     $app->post('/atendentes/new', function ($request, $response, $args) {
         
-        $atendente = $request->getBody();
+        $body = $request->getBody();
+
+        $atendente = json_decode($body);
 
         $usuario = new Usuario();
-        $data = $usuario->novoUsuario($atendente->nome, $atendente->cpf, $atendente->email, $atendente->senha, 2 );
+        $data = $usuario->novoUsuario($atendente->nome, $atendente->cpf, $atendente->email, $atendente->senha, $atendente->tipo);
 
         if($data!= false){
            

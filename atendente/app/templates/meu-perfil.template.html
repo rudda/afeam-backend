@@ -1,0 +1,16 @@
+<div class="row" ng-controller="MeuPerfilController as meuPerfilController">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="panel">
+            <div class="panel-heading">Meus dados</div>
+            <div class="panel-body">
+                <h3 style="margin-top: 0;">{{meuPerfilController.usuario.nome}}</h3>
+                <p>
+                    <b>CPF:</b> {{meuPerfilController.usuario.cpf}}
+                    <br><b>Senha:</b> {{meuPerfilController.usuario.senha}}
+                    <br><b>E-mail:</b> {{meuPerfilController.usuario.email}}
+                    <br><b>Tipo</b> {{meuPerfilController.carregarTipo(meuPerfilController.usuario.tipo)}}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

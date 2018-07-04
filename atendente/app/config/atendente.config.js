@@ -36,6 +36,15 @@ angular.module('AtendenteModule').config(function ($stateProvider, $urlRouterPro
                 loader: ['$ocLazyLoad', function($ocLazyLoad) {
                     return $ocLazyLoad.load(['app/controllers/editar-cliente.controller.js']);
                 }]}
+        })
+        .state({
+            name: 'meuperfil',
+            url: '/meu-perfil',
+            templateUrl: 'app/templates/meu-perfil.template.html',
+            resolve: {
+                loader: ['$ocLazyLoad', function($ocLazyLoad) {
+                    return $ocLazyLoad.load(['app/controllers/meu-perfil.controller.js']);
+                }]}
         });
 
     $urlRouterProvider.otherwise('/clientes');

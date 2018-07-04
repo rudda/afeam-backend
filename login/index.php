@@ -50,20 +50,22 @@
 
                             <div class="form-group input-group">
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                <input class="form-control" type="text" placeholder="CPF" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required ng-model="loginController.cpf" mask="999.999.999-99" mask-restrict="reject">
+                                <input id="cpf" class="form-control" type="text" placeholder="CPF" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required ng-model="loginController.cpf" mask="999.999.999-99" mask-restrict="reject">
                             </div>
 
                             <div class="form-group input-group">
                                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                                <input class="form-control" type="password" placeholder="Senha" required ng-model="loginController.senha">
+                                <input id="senha" class="form-control" type="password" placeholder="Senha" required ng-model="loginController.senha">
                             </div>
 
                             <div class="form-group clearfix">
                                 <label class="fancy-checkbox element-left">
-                                    <input type="checkbox" ng-model="loginController.mantenhaMeConectado">
+                                    <input id="mantenha-me-conectado" type="checkbox" ng-model="loginController.mantenhaMeConectado">
                                     <span>Mantenha-me conectado</span>
                                 </label>
                             </div>
+
+                            <a class="text-success" href="" ng-click="loginController.recuperarSenha()"><i class="fa fa-lock"></i> Recuperar Senha</a>
 
                             <button type="submit" class="btn btn-success btn-block" ng-disabled="loginController.processandoLogin"><i class="fa fa-spinner fa-spin" ng-if="loginController.processandoLogin"></i> LOGIN </button>
 

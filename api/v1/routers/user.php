@@ -16,3 +16,19 @@ $app->post('/usuarios/login/{cpf}/{senha}', function ($request, $response, $args
 
    
 });
+
+$app->post('/usuarios/recuperar/{cpf}', function ($request, $response, $args) {
+    $usuario = new Usuario();
+    $data = $usuario->recuperar($args['cpf']);
+
+    if($data != false){
+
+        return  $response->write( json_encode(  $data ))->withStatus(200);
+
+
+    }
+
+    return  $response->write( json_encode(  $data ))->withStatus(500);
+
+
+});

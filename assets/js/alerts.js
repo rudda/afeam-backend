@@ -39,7 +39,7 @@ let alerts = {
 
         swal({
             title: titulo,
-            content: subtitulo,
+            text: subtitulo,
             icon: 'info',
             closeModal: false,
             closeOnEsc: false,

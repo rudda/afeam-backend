@@ -65,7 +65,6 @@
             <nav>
                 <ul class="nav">
                     <li><a ui-sref-active="active" ui-sref="clientes" href="#!/clientes"><i class="lnr lnr-users"></i> <span>Clientes</span></a></li>
-                    <li><a ui-sref-active="active" ui-sref="relatorios" href="#!/relatorios"><i class="lnr lnr-book"></i> <span>Relatórios</span></a></li>
                 </ul>
             </nav>
         </div>

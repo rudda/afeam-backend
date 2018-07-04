@@ -93,6 +93,9 @@
 <!-- Bootstrap -->
 <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
 
+<!-- Sweet Alert -->
+<script src="../node_modules/sweetalert/dist/sweetalert.min.js" type="text/javascript"></script>
+
 <!-- Toastr -->
 <script src="../node_modules/toastr/build/toastr.min.js" type="text/javascript"></script>
 
@@ -102,6 +105,7 @@
 <script src="../assets/js/cookies.js" type="text/javascript"></script>
 <script src="../assets/js/klorofil-common.js" type="text/javascript"></script>
 <script src="../assets/js/ngmask.min.js" type="text/javascript"></script>
+<script src="../assets/js/alerts.js" type="text/javascript"></script>
 
 <script src="app/modules/login.module.js" type="text/javascript"></script>
 <script src="app/controllers/login.controller.js" type="text/javascript"></script>
